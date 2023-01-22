@@ -2,7 +2,7 @@ const express = require('express'); //framework
 const {User,Post}=require("./models/schemas"); // data validation or "blueprient for data to be"
 const fileUpload = require('express-fileupload')//imported because have to upload files
 const path = require('path');
-const bodyparser = require('body-parser')
+// const bodyparser = require('body-parser')
 const cors = require("cors") //cross origin resource sharing
 const mongoose = require('mongoose');   // DBMS with schemas support
 const port = 8080 || process.env.PORT  // if 8080 is busy then process give us a port
@@ -14,8 +14,8 @@ app.use(express.urlencoded());
 app.use(express.json()) //middleware to parsing json data format
 app.use(cors());
 app.use(fileUpload());
-app.use(bodyparser.urlencoded({extended:false}))
-app.use(bodyparser.json())
+// app.use(bodyparser.urlencoded({extended:false}))
+// app.use(bodyparser.json())
 //connect to server database
 mongoose.connect(url,(err)=>{
     if(err){console.log(err);}else{
