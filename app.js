@@ -79,7 +79,7 @@ app.get('/api/all',async(req,res)=>{
 })
 
 app.get("/images/:fileName", async (req, resp) => {
-    console.log(`./uploads/${req.params.fileName}`)
+    console.log(`./upload/${req.params.fileName}`)
     resp.sendFile(path.join(__dirname, `./upload/${req.params.fileName}`))
 })
 app.listen(port,()=>{console.log(`server is up at ${port}`);})
