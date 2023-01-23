@@ -32,7 +32,10 @@ const PostSchema = mongoose.Schema({
     },
     like:{
 type:String
-    }
+    },
+    date:{
+        type:String
+            }
 
 })
 
