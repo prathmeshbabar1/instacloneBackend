@@ -60,9 +60,10 @@ if(err){
             ...{ username, address, description,like,date },
           image_file:  image_file.name
         })
+
         try{
             const response = await post.save();
-            res.json({message:"evrything is ok", response})
+            res.json({message:"evrything is ok", response});
         }catch(e){
             res.json({message:"something went wrong",response:e})
         }
