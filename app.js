@@ -45,8 +45,8 @@ app.get('/',(req,res)=>{
 
 app.post('/api',(req,res)=>{
   
-    const { username, address, description ,like}  = req.body
-    console.log({ username, address, description,like })
+    const { username, address, description ,like,date}  = req.body
+    console.log({ username, address, description,like,date })
  
  const {image_file} = req.files;
 //  
@@ -57,12 +57,13 @@ if(err){
     res.json({message:err})}
     else{
         const post = new Post({
-            ...{ username, address, description,like },
+            ...{ username, address, description,like,date },
           image_file:  image_file.name
         })
+
         try{
             const response = await post.save();
-            res.json({message:"evrything is ok", response})
+            res.json({message:"evrything is ok", response});
         }catch(e){
             res.json({message:"something went wrong",response:e})
         }
@@ -83,3 +84,4 @@ app.get("/images/:fileName", async (req, resp) => {
     resp.sendFile(path.join(__dirname, `./upload/${req.params.fileName}`))
 })
 app.listen(port,()=>{console.log(`server is up at ${port}`);})
+
