@@ -46,7 +46,7 @@ app.get('/',(req,res)=>{
 app.post('/api',(req,res)=>{
   
     const { username, address, description ,like}  = req.body
-    console.log({ username, address, description,like })
+    // console.log({ username, address, description,like })
  
  const {image_file} = req.files;
 //  
