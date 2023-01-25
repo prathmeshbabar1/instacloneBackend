@@ -45,8 +45,8 @@ app.get('/',(req,res)=>{
 
 app.post('/api',(req,res)=>{
   
-    const { username, address, description ,like,date}  = req.body
-    // console.log({ username, address, description,like,date })
+    const { username, address, description ,like}  = req.body
+    console.log({ username, address, description,like })
  
  const {image_file} = req.files;
 //  
@@ -84,3 +84,4 @@ app.get("/images/:fileName", async (req, resp) => {
     resp.sendFile(path.join(__dirname, `./upload/${req.params.fileName}`))
 })
 app.listen(port,()=>{console.log(`server is up at ${port}`);})
+
